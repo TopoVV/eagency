@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en"
+			xmlns="http://www.w3.org/1999/xhtml"
+			xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Sign Up Customer</title>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"/>
+	<link	href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.css" rel="stylesheet"/>
+	<link type="text/css" th:href="@{/css/main.css}" rel="stylesheet">
+</head>
+	<body>
+		<div class="form-wrapper">
+			<h1>SIGN UP AS CUSTOMER</h1>
+			<form th:action="@{/register/customer}" th:object="${signupRequest}" method="post">
+				<div class="row mb-2">
+					<div class="col">
+						<div class="form-outline">
+							<input th:field="*{fistName}" type="text" id="firstName" class="form-control">
+							<label for="firstName" class="form-label">First name</label>
+						</div>
+					</div>
+					<div class="col">
+						<div class="form-outline">
+							<input th:field="*{lastName}" type="text" id="lastName" class="form-control">
+							<label for="lastName" class="form-label">Last name</label>
+						</div>
+					</div>
+				</div>
+				<div class="row mb-2">
+					<div class="col">
+						<div class="form-outline">
+							<input th:field="*{password}" type="text" id="password" class="form-control">
+							<label for="password" class="form-label">Password</label>
+						</div>
+					</div>
+					<div class="col">
+						<div class="form-outline">
+							<input th:field="*{confirmPassword}" type="text" id="cPassword" class="form-control">
+							<label for="cPassword" class="form-label">Confirm password</label>
+						</div>
+					</div>
+				</div>
+				<div class="form-outline mb-2">
+					<input th:field="*{phone}" type="text" id="phone" class="form-control">
+					<label for="phone" class="form-label">Phone</label>
+				</div>
+				<div class="form-outline mb-2">
+					<input th:field="*{email}" type="text" id="email" class="form-control">
+					<label for="email" class="form-label">Email</label>
+				</div>
+				<div class="form-outline mb-2">
+					<input th:field="*{rntrc}" type="text" id="rntrc" class="form-control">
+					<label for="rntrc" class="form-label">RNTRC</label>
+				</div>
+				<div class="form-outline mb-2">
+					<input th:field="*{citizenId}" type="text" id="citizenId" class="form-control">
+					<label for="citizenId" class="form-label">Citizen ID</label>
+				</div>
+				<button type="submit" class="btn btn-primary btn-block mb-4">Sign up</button>
+			</form>
+		</div>
+	</body>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js"></script>
+</html>
