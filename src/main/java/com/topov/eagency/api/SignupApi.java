@@ -9,8 +9,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.annotation.PostConstruct;
-
 @Controller
 @RequestMapping("/signup")
 public class SignupApi {
@@ -22,7 +20,7 @@ public class SignupApi {
 
     @GetMapping(value = "/seller")
     public String signupSellerGet() {
-        return null;
+        return "sellerRegistration";
     }
 
     @GetMapping(value = "/agent")
@@ -31,17 +29,17 @@ public class SignupApi {
     }
 
     @PostMapping(value = "/customer")
-    public ModelAndView signupCustomerPost(SignupRequest request) {
+    public ModelAndView signupCustomerPost(@ModelAttribute("signupRequest") SignupRequest request) {
         return null;
     }
 
     @PostMapping(value = "/seller")
-    public ModelAndView signupSellerPost(SignupRequest request) {
+    public ModelAndView signupSellerPost(@ModelAttribute("signupRequest") SignupRequest request) {
         return null;
     }
 
     @PostMapping(value = "/agent")
-    public ModelAndView signupEAgentPost(EAgentSignupRequest request) {
+    public ModelAndView signupEAgentPost(@ModelAttribute("eAgentSignupRequest") EAgentSignupRequest request) {
         return null;
     }
 
