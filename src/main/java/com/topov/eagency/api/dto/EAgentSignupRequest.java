@@ -6,5 +6,5 @@ import lombok.Setter;
 @Getter
 @Setter
 public class EAgentSignupRequest extends SignupRequest {
-    private String signupKey;
+    private String agentId;
 }
